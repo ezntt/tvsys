@@ -1,8 +1,7 @@
 package com.tvsys.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +17,8 @@ import java.util.Date;
 public class Card {
 
     @Id
+    // auto-increment
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cardId;
 
     @OneToOne
@@ -25,7 +26,10 @@ public class Card {
 
     private float balance;
     private boolean status;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date expirationDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date lastRecharge;
 
 }
