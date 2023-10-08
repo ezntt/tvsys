@@ -1,0 +1,26 @@
+
+version: "3.9"
+services:
+  tvsys-mysql-docker:
+    platform: linux/x86_64
+    image: docker.io/mysql:5.7
+    container_name: tvsys-mysql-docker
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+      - MYSQL_DATABASE=tvsys
+    volumes:
+      ## ENTENDER COMO FUNCIONA E EDITAR ESSE VOLUME
+      - ./db:/var/lib/mysql
+    ports:
+      # HOST:CONTAINER
+      - "3306:3306"
+    
+
+volumes:
+  tvsys-mysql-docker:
+    external: true
+  etcd_data:
+    driver: local
+

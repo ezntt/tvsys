@@ -1,0 +1,11 @@
+spring:
+  thymeleaf.cache: false
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/tvsys}
+    username: ${DATABASE_USER:user}
+    password: ${DATABASE_PASS:pass}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
