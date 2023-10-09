@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @Setter
 @AllArgsConstructor
 @Entity
-@NoArgsConstructor // constructor without arguments
+@NoArgsConstructor
 public class Line {
 
     @Id

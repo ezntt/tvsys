@@ -13,7 +13,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @Entity
-@NoArgsConstructor // constructor without arguments
+@NoArgsConstructor
 public class Employee {
 
     @Id

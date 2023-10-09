@@ -1,7 +1,6 @@
-package com.tvsys.entity;
+package com.tvsys.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,17 +11,10 @@ import java.util.Date;
 @Getter
 @Setter
 @AllArgsConstructor
-@Entity
 @NoArgsConstructor
-public class Card {
+public class CardRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) // auto increment
-    private Long cardId;
-
-    @OneToOne
-    @JoinColumn(nullable = false)
-    private User user;
+    private Long userId;
 
     private float balance;
     private boolean status;
@@ -32,6 +24,4 @@ public class Card {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date lastRecharge;
 
-    public Card(User user, float balance, boolean status, Date expirationDate, Date lastRecharge) {
-    }
 }

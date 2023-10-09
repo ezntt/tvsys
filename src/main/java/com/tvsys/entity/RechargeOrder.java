@@ -14,7 +14,7 @@ import java.sql.Date;
 @Setter
 @AllArgsConstructor
 @Entity
-@NoArgsConstructor // constructor without arguments
+@NoArgsConstructor
 public class RechargeOrder {
 
     @Id
