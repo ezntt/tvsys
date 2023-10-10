@@ -21,7 +21,6 @@ public class Card {
     private Long cardId;
 
     @OneToOne
-    @JoinColumn(nullable = false)
     private User user;
 
     private float balance;
@@ -32,6 +31,4 @@ public class Card {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date lastRecharge;
 
-    public Card(User user, float balance, boolean status, Date expirationDate, Date lastRecharge) {
-    }
 }

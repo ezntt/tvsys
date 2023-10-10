@@ -1,5 +1,6 @@
 package com.tvsys.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -28,6 +29,8 @@ public class RechargeOrder {
     private Employee employee;
 
     private float value;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date orderDate;
 
 }
