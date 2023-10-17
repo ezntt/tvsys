@@ -28,9 +28,7 @@ public class UserController {
     @GetMapping("/users")
     public List<User> read() {
 
-        List<User> users = userRepository.findAll(); // Busca todos os users no banco de dados
-
-        return users;
+        return userRepository.findAll();
 
     }
 

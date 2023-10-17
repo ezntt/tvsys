@@ -28,9 +28,7 @@ public class LineController {
     @GetMapping("/lines")
     public List<Line> read() {
 
-        List<Line> lines = lineRepository.findAll();
-
-        return lines;
+        return lineRepository.findAll();
 
     }
 

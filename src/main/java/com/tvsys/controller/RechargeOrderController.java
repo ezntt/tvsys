@@ -28,9 +28,7 @@ public class RechargeOrderController {
     @GetMapping("/rechargeOrders")
     public List<RechargeOrder> read() {
 
-        List<RechargeOrder> rechargeOrders = rechargeOrderRepository.findAll();
-
-        return rechargeOrders;
+        return rechargeOrderRepository.findAll();
 
     }
 

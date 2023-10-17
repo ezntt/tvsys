@@ -28,9 +28,7 @@ public class CardUsageController {
     @GetMapping("/cardUsages")
     public List<CardUsage> read() {
 
-        List<CardUsage> cardUsages = cardUsageRepository.findAll();
-
-        return cardUsages;
+        return cardUsageRepository.findAll();
 
     }
 

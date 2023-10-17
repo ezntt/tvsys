@@ -28,9 +28,7 @@ public class EmployeeController {
     @GetMapping("/employees")
     public List<Employee> read() {
 
-        List<Employee> employees = employeeRepository.findAll();
-
-        return employees;
+        return employeeRepository.findAll();
 
     }
 
