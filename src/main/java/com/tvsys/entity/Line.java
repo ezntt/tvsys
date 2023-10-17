@@ -1,5 +1,6 @@
 package com.tvsys.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -20,11 +21,12 @@ public class Line {
     private Long lineId;
 
     private String name;
-    private int counter;
     private float price;
 
     // TODO see if "hour" is the best option to use
-    private Timestamp first_hour;
-    private Timestamp last_hour;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "hh:mm")
+    private Timestamp firstHour;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "hh:mm")
+    private Timestamp lastHour;
 
 }
